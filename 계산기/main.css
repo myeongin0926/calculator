@@ -1,0 +1,98 @@
+body {
+  transition: 0.5s;
+  max-height: 600px;
+}
+body.turn {
+  background-color: rgb(23, 23, 23);
+}
+body .calculator {
+  width: 60vh;
+  height: 60vh;
+  background-color: rgb(233, 233, 233);
+  margin: 0 auto;
+  margin-top: 20vh;
+  position: relative;
+  visibility: visible;
+  opacity: 1;
+  transform: rotateY(0deg);
+  transition: 0.5s;
+}
+body.turn .calculator {
+  transform: rotateY(180deg);
+  backface-visibility: hidden;
+  visibility: hidden;
+  opacity: 0;
+}
+.textfiled {
+  width: 54.5vh;
+  height: 15vh;
+  background-color: rgb(255, 255, 255);
+  position: absolute;
+  top: 2vh;
+  left: 2.5vh;
+  padding: 1vh;
+  border-radius: 1vh;
+  box-sizing: border-box;
+}
+.buttons {
+  position: absolute;
+  top: 20vh;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.button--list1,
+.button--list2,
+.button--list3,
+.button--list4,
+.button--list5 {
+  display: flex;
+  gap: 1vh;
+  justify-content: center;
+  margin-bottom: 1vh;
+  width: 55vh;
+}
+
+.btn {
+  width: 14vh;
+  height: 7vh;
+  border-radius: 1vh;
+  border: 0.1vh solid lightgray;
+  font-size: 2vh;
+  background-color: white;
+  transition: 0.1s;
+  outline: 0;
+}
+.btn:hover {
+  background-color: rgb(222, 222, 222);
+}
+.btn.click {
+  box-shadow: -1px -1px 2px 1px rgb(135, 135, 135);
+  transition: 0.01s;
+  transform: translate(1px, 1px);
+}
+.button--list5 .btn:first-child {
+  width: 30vh;
+  flex-grow: 2;
+}
+
+body .calculator.back {
+  transform: translate(0, -80vh) rotateY(180deg);
+  backface-visibility: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transition: 0.5s;
+}
+body.turn .calculator.back {
+  transform: translate(0, -80vh) rotateY(0deg);
+  visibility: visible;
+  opacity: 1;
+  background-color: rgb(55, 55, 55);
+}
+body.turn .calculator.back .textfiled {
+  background-color: azure;
+}
+body.turn .calculator.back .btn {
+  background-color: rgb(16, 16, 16);
+  color: white;
+}
