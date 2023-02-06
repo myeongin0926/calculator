@@ -1,9 +1,8 @@
 body {
   transition: 0.5s;
-  max-height: 600px;
 }
-body.turn {
-  background-color: rgb(23, 23, 23);
+body.night {
+  background-color: black;
 }
 body .calculator {
   width: 60vh;
@@ -14,14 +13,13 @@ body .calculator {
   position: relative;
   visibility: visible;
   opacity: 1;
-  transform: rotateY(0deg);
+  transform: perspective(1000px);
   transition: 0.5s;
+  border-radius: 10px;
 }
-body.turn .calculator {
-  transform: rotateY(180deg);
-  backface-visibility: hidden;
-  visibility: hidden;
-  opacity: 0;
+
+body.night .calculator {
+  background-color: rgb(29, 29, 29);
 }
 .textfiled {
   width: 54.5vh;
@@ -33,10 +31,38 @@ body.turn .calculator {
   padding: 1vh;
   border-radius: 1vh;
   box-sizing: border-box;
+  font-size: 5vh;
+  overflow: hidden;
+}
+.textfiled .accumulate {
+  position: absolute;
+  right: 1vh;
+  width: 40vh;
+  border-radius: 1vh;
+  height: 4vh;
+  font-size: 1vh;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  align-items: center;
+  padding-right: 2vh;
+  color: grey;
+  flex-wrap: wrap;
+}
+.textfiled .text-area {
+  position: absolute;
+  top: 6vh;
+  width: 51vh;
+  height: 8vh;
+  display: flex;
+  justify-content: flex-end;
+  overflow: hidden;
+  align-items: center;
+  padding-right: 1vh;
 }
 .buttons {
   position: absolute;
-  top: 20vh;
+  top: 19vh;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -76,23 +102,17 @@ body.turn .calculator {
   flex-grow: 2;
 }
 
-body .calculator.back {
-  transform: translate(0, -80vh) rotateY(180deg);
-  backface-visibility: hidden;
-  visibility: hidden;
-  opacity: 0;
-  transition: 0.5s;
+body.night .textfiled {
+  background-color: rgb(121, 121, 121);
 }
-body.turn .calculator.back {
-  transform: translate(0, -80vh) rotateY(0deg);
-  visibility: visible;
-  opacity: 1;
-  background-color: rgb(55, 55, 55);
+body.night .btn {
+  background-color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
 }
-body.turn .calculator.back .textfiled {
-  background-color: azure;
-}
-body.turn .calculator.back .btn {
-  background-color: rgb(16, 16, 16);
+body.night .textfiled .accumulate,
+body.night .textfiled .text-area {
   color: white;
+}
+body.night .btn:hover {
+  background-color: rgb(50, 50, 50);
 }
