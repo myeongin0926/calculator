@@ -12,12 +12,9 @@ btns[1].addEventListener("click", () => {
     btns[1].textContent = "Day";
   }
 });
-let numberonr = textarea.textContent;
 btns.forEach((el) => {
   el.addEventListener("mousedown", (a) => {
     el.classList.add("click");
-    console.log(el.textContent);
-
     switch (el.textContent) {
       case "1":
         if (textarea.textContent == "0") {
@@ -120,7 +117,12 @@ btns.forEach((el) => {
         textarea.textContent += "0";
         break;
       case ".":
-        textarea.textContent += ".";
+        if (textarea.textContent.indexOf(".") == -1) {
+          textarea.textContent += ".";
+        } else {
+          return;
+        }
+
         break;
       case "Delete":
         let Delete = textarea.textContent;

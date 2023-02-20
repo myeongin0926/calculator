@@ -1,5 +1,6 @@
 body {
   transition: 0.5s;
+  color: black;
 }
 body.night {
   background-color: black;
